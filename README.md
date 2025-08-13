@@ -34,3 +34,9 @@ An ID3v2 tag starts with a tag header followed by one or more frames. Each frame
  .Size $xx xx xx xx (Four Characters)
  
  .Flags $xx xx
+# Sample Output
+![mtr_1](https://github.com/user-attachments/assets/28e79484-2027-4c96-a272-18d6b
+![mtr_2](https://github.com/user-attachments/assets/3874efaa-0645-4ecc-9139-abe85f3426ab)
+6165d07)
+![mtr_3](https://github.com/user-attachments/assets/10ef0fc0-b300-44a8-9212-0d3c7b80612d)
+<img width="1197" height="522" alt="Screenshot 2025-08-13 220503" src="https://github.com/user-attachments/assets/d24d43dd-eecd-4d58-96c5-e13a265bae7d" />
