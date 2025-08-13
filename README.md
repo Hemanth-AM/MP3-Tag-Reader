@@ -14,6 +14,7 @@ An ID3v2 tag starts with a tag header followed by one or more frames. Each frame
 
 # ID3v2 Frame header: 
  .ID3v2/file identifier “ID3” 
+ 
  .ID3v2 version $03 00 (2, 3 or 4) 
  .ID3v2 flags %abc00000 
  .ID3v2 size 4 * %0xxxxxxx (Total size of ID3 tag) 
