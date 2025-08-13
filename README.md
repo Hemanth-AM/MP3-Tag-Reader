@@ -12,17 +12,17 @@ Total 128 bytes used for storing this metadata. If you one sum the size of all t
 
 An ID3v2 tag starts with a tag header followed by one or more frames. Each frame in turn consists of a header and (usually) some kind of content. The ID3v2 tag is more flexible and hence more difficult to work with. An ID3v2 tag has a signature code of “ID3x” where x is the sub-version number of the tag. Typically, ID3v2 tags are found at the beginning of an MP3 file, but this is not an absolute restriction. What happens next depends on the subversion of the ID3v2 tag. As far as we can tell, there have been three versions so far: 2,3 and 4. Some important details about the headers are given below.  
 
-#ID3v2 Frame header: 
-ID3v2/file identifier “ID3” 
-ID3v2 version $03 00 (2, 3 or 4) 
-ID3v2 flags %abc00000 
-ID3v2 size 4 * %0xxxxxxx (Total size of ID3 tag) 
-#ID3v2.2 Frame header:
-Frame ID $xx xx xx(Three characters) [e.g.: TAL Album / Movie / Show title]
-TOA Original artist(s) / performer(s) 
-Size $xx xx xx(Three characters)
- #ID3v2.3 or ID3v2.4 Frame header:
-Frame ID $xx xx xx xx (Four characters) [e.g.: TAL Album/Movie/Show title]
-TIT2 Title / song name /content description 
-Size $xx xx xx xx (Four Characters)
-Flags $xx xx
+# ID3v2 Frame header: 
+ ID3v2/file identifier “ID3” 
+ ID3v2 version $03 00 (2, 3 or 4) 
+ ID3v2 flags %abc00000 
+ ID3v2 size 4 * %0xxxxxxx (Total size of ID3 tag) 
+# ID3v2.2 Frame header:
+ Frame ID $xx xx xx(Three characters) [e.g.: TAL Album / Movie / Show title]
+ TOA Original artist(s) / performer(s) 
+ Size $xx xx xx(Three characters)
+# ID3v2.3 or ID3v2.4 Frame header:
+ Frame ID $xx xx xx xx (Four characters) [e.g.: TAL Album/Movie/Show title]
+ TIT2 Title / song name /content description 
+ Size $xx xx xx xx (Four Characters)
+ Flags $xx xx
