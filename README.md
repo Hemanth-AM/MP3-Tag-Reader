@@ -1,17 +1,63 @@
 # MP3-Tag-Reader
 Implementing an application to extract tags from the given MP3 file using C functions.
 
-The MP3 Tag Reader project in C is a software which will read and display MP3 (ID3) tag information from MP3 files. The software will be desktop based and not web based. The project will be useful to individuals who wish to view and collect MP3 tag data. This project can be extended to implement a tag editor, wherein users can modify mp3 tag information.
+#Overview:
+The MP3 Tag Reader is a command-line C application that reads and displays MP3 (ID3) tag information from MP3 files. This software is desktop-based and not web-based, designed for individuals who wish to view and collect MP3 tag metadata such as title, artist, album, year, and genre. The project can be extended to include editing capabilities for modifying MP3 tag information.
 
-Implemented as a command line application, this should be able to handle some operations on the MP3 tags as called out below. 
+#About ID3 Tags:
+ID3 is a metadata container most often used with the MP3 audio file format. It allows information like the song title, artist, album, track number, and other details to be stored inside the MP3 file itself.
+There are two main versions:
 
-A Brief Introduction to ID3 Standard and Tags 
-ID3 is a metadata container most often used in conjunction with the MP3 audio file format. It allows information such as the title, artist, album, track number, and other information about the file to be stored in the file itself. There are two unrelated versions of ID3: ID3v1 and ID3v2. You will have to first detect the ID3 version before getting the tag details.
+ID3v1: Found at the end of an MP3 file, occupying the last 128 bytes.
 
-Total 128 bytes used for storing this metadata. If you one sum the size of all these fields we see that 30+30+30+4+30+1 equals 125 bytes and not 128 bytes. The missing three bytes can be found at the very end of the tag, before the song title. These three bytes are always “TAG” and is the identification that this is indeed an ID3 tag. As all artists doesn’t have a 30 character name it is said that if there are some bytes left after the information is entered in the field, those bytes should be filled with the binary value 0.
+ID3v2: Found at the beginning of the MP3 file, more flexible but more complex to parse.
 
-An ID3v2 tag starts with a tag header followed by one or more frames. Each frame in turn consists of a header and (usually) some kind of content. The ID3v2 tag is more flexible and hence more difficult to work with. An ID3v2 tag has a signature code of “ID3x” where x is the sub-version number of the tag. Typically, ID3v2 tags are found at the beginning of an MP3 file, but this is not an absolute restriction. What happens next depends on the subversion of the ID3v2 tag. As far as we can tell, there have been three versions so far: 2,3 and 4. Some important details about the headers are given below.  
+#ID3v1 Structure:
 
+Signature: "TAG" (3 bytes)
+
+Title: 30 bytes
+
+Artist: 30 bytes
+
+Album: 30 bytes
+
+Year: 4 bytes
+
+Comment: 30 bytes
+
+Genre: 1 byte
+If a field doesn’t use all allocated bytes, the remaining bytes are padded with binary 0.
+
+#ID3v2 Structure:
+
+Starts with "ID3x" (x = sub-version number: 2, 3, or 4)
+
+Contains a tag header followed by one or more frames, each with its own header and content.
+
+Typically appears at the beginning of the MP3 file.
+
+#Features:
+Detect and Read ID3 Version
+
+Automatically detects whether the MP3 file uses ID3v1 or ID3v2 tags.
+
+View Tag Details
+
+Displays song title, artist, album, year, comment, and genre in a readable format.
+
+Extra Feature – Save to CSV (New)
+
+After displaying tag details, the program asks:
+"Do you want to save the details to a CSV file? (y/n)"
+
+If the user selects "yes," all details are stored in a .csv file in a structured format for future reference.
+
+This feature allows building a collection of MP3 metadata easily.
+
+Future Scope (Optional Extension)
+
+Implement a tag editor to modify MP3 tag information directly from the command line.
 # ID3v2 Frame header: 
  .ID3v2/file identifier “ID3” 
  
