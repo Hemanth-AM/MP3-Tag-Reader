@@ -2,6 +2,7 @@
 #define MP3EDIT_H
 
 #include<stdio.h>
+#include "typdef.h"
 
 
 typedef struct _mp3edit
