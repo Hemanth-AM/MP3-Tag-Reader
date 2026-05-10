@@ -12,11 +12,11 @@ pipeline {
         }
 
         stage('Run') {
-            steps {
-                dir('MP3_Tag_Reader_skeleton code - Copy (3)') {
-                    bat 'app.exe'
-                }
-            }
+    steps {
+        dir('MP3_Tag_Reader_skeleton code - Copy (3)') {
+            bat 'app.exe -v sample.mp3'
         }
+    }
+}
     }
 }
