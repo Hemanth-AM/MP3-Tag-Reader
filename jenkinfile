@@ -1,15 +1,21 @@
 pipeline {
     agent any
 
-    options {
-        timeout(time: 2, unit: 'MINUTES')
-        timestamps()
-    }
-
     stages {
+
         stage('Build') {
             steps {
-                echo 'Building...'
+                dir('MP3_Tag_Reader_skeleton code - Copy (3)') {
+                    bat 'gcc *.c -o app.exe'
+                }
+            }
+        }
+
+        stage('Run') {
+            steps {
+                dir('MP3_Tag_Reader_skeleton code - Copy (3)') {
+                    bat 'app.exe'
+                }
             }
         }
     }
